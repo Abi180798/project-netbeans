@@ -244,6 +244,9 @@
               <Dimension value="[90, 50]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="akarMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="satuperx">
           <Properties>
@@ -257,6 +260,9 @@
               <Dimension value="[90, 50]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="satuperxMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="persen">
           <Properties>
@@ -270,6 +276,9 @@
               <Dimension value="[90, 50]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="persenMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="xkuadrat">
           <Properties>
@@ -283,6 +292,9 @@
               <Dimension value="[90, 50]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="xkuadratMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="ce">
           <Properties>
@@ -296,6 +308,9 @@
               <Dimension value="[90, 50]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ceMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="c">
           <Properties>
@@ -549,6 +564,9 @@
               <Dimension value="[90, 50]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="kuranglebihMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="nol">
           <Properties>

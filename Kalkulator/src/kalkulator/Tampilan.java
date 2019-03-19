@@ -74,22 +74,47 @@ public class Tampilan extends javax.swing.JFrame {
         akar.setText("√");
         akar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         akar.setPreferredSize(new java.awt.Dimension(90, 50));
+        akar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                akarMouseClicked(evt);
+            }
+        });
 
         satuperx.setText("1/x");
         satuperx.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         satuperx.setPreferredSize(new java.awt.Dimension(90, 50));
+        satuperx.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                satuperxMouseClicked(evt);
+            }
+        });
 
         persen.setText("%");
         persen.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         persen.setPreferredSize(new java.awt.Dimension(90, 50));
+        persen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                persenMouseClicked(evt);
+            }
+        });
 
         xkuadrat.setText("x2");
         xkuadrat.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         xkuadrat.setPreferredSize(new java.awt.Dimension(90, 50));
+        xkuadrat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                xkuadratMouseClicked(evt);
+            }
+        });
 
         ce.setText("CE");
         ce.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ce.setPreferredSize(new java.awt.Dimension(90, 50));
+        ce.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ceMouseClicked(evt);
+            }
+        });
 
         c.setText("C");
         c.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -229,6 +254,11 @@ public class Tampilan extends javax.swing.JFrame {
         kuranglebih.setText("±");
         kuranglebih.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         kuranglebih.setPreferredSize(new java.awt.Dimension(90, 50));
+        kuranglebih.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                kuranglebihMouseClicked(evt);
+            }
+        });
 
         nol.setText("0");
         nol.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -463,7 +493,10 @@ public class Tampilan extends javax.swing.JFrame {
     }//GEN-LAST:event_samadenganMouseClicked
 
     private void komaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_komaMouseClicked
-        show.setText(show.getText()+",");
+        if(!show.getText().contains(",")){
+            show.setText(show.getText() + koma.getText());
+        }
+//        show.setText(show.getText()+",");
     }//GEN-LAST:event_komaMouseClicked
 
     private void cMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cMouseClicked
@@ -481,6 +514,40 @@ public class Tampilan extends javax.swing.JFrame {
             show.setText(hDelete);
         }
     }//GEN-LAST:event_deleteMouseClicked
+
+    private void kuranglebihMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kuranglebihMouseClicked
+        double ops = Double.parseDouble(String.valueOf(show.getText()));
+        ops = ops * (-1);
+        show.setText(String.valueOf(ops));
+    }//GEN-LAST:event_kuranglebihMouseClicked
+
+    private void akarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_akarMouseClicked
+        double ops = Double.parseDouble(String.valueOf(show.getText()));
+        ops = Math.sqrt(ops);
+        show.setText(String.valueOf(ops));
+    }//GEN-LAST:event_akarMouseClicked
+
+    private void xkuadratMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xkuadratMouseClicked
+        double ops = Double.parseDouble(String.valueOf(show.getText()));
+        ops = ops * ops;
+        show.setText(String.valueOf(ops));
+    }//GEN-LAST:event_xkuadratMouseClicked
+
+    private void satuperxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_satuperxMouseClicked
+        double ops = Double.parseDouble(String.valueOf(show.getText()));
+        ops = 1 / ops;
+        show.setText(String.valueOf(ops));
+    }//GEN-LAST:event_satuperxMouseClicked
+
+    private void persenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_persenMouseClicked
+        double ops = Double.parseDouble(String.valueOf(show.getText()));
+        ops = ops / 100;
+        show.setText(String.valueOf(ops));
+    }//GEN-LAST:event_persenMouseClicked
+
+    private void ceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ceMouseClicked
+        show.setText("");
+    }//GEN-LAST:event_ceMouseClicked
     
     private void aritmatik(){
         switch(cal){
