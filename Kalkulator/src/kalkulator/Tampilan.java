@@ -1,8 +1,9 @@
 package kalkulator;
 
 public class Tampilan extends javax.swing.JFrame {
-    private double num, ans;
+    private double num, num2 = 0, ans;
     private int cal;
+    private String operation;
     
     public Tampilan() {
         initComponents();
@@ -47,8 +48,16 @@ public class Tampilan extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        show.setBackground(new java.awt.Color(0, 0, 0));
+        show.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        show.setForeground(new java.awt.Color(0, 0, 0));
+        show.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         show.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        bShow.setBackground(new java.awt.Color(0, 0, 0));
+        bShow.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        bShow.setForeground(new java.awt.Color(0, 0, 0));
+        bShow.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         bShow.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -66,11 +75,17 @@ public class Tampilan extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(bShow, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                .addComponent(bShow, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(show, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(0, 102, 153));
+
+        akar.setBackground(new java.awt.Color(0, 255, 204));
+        akar.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        akar.setForeground(new java.awt.Color(255, 255, 255));
+        akar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         akar.setText("√");
         akar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         akar.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -80,6 +95,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        satuperx.setBackground(new java.awt.Color(0, 255, 204));
+        satuperx.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        satuperx.setForeground(new java.awt.Color(255, 255, 255));
+        satuperx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         satuperx.setText("1/x");
         satuperx.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         satuperx.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -89,6 +108,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        persen.setBackground(new java.awt.Color(0, 255, 204));
+        persen.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        persen.setForeground(new java.awt.Color(255, 255, 255));
+        persen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         persen.setText("%");
         persen.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         persen.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -98,7 +121,11 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
-        xkuadrat.setText("x2");
+        xkuadrat.setBackground(new java.awt.Color(0, 255, 204));
+        xkuadrat.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        xkuadrat.setForeground(new java.awt.Color(255, 255, 255));
+        xkuadrat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        xkuadrat.setText("x^2");
         xkuadrat.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         xkuadrat.setPreferredSize(new java.awt.Dimension(90, 50));
         xkuadrat.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -107,6 +134,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        ce.setBackground(new java.awt.Color(255, 51, 51));
+        ce.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        ce.setForeground(new java.awt.Color(255, 255, 255));
+        ce.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ce.setText("CE");
         ce.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ce.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -116,6 +147,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        c.setBackground(new java.awt.Color(255, 51, 51));
+        c.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        c.setForeground(new java.awt.Color(255, 255, 255));
+        c.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         c.setText("C");
         c.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         c.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -125,6 +160,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        delete.setBackground(new java.awt.Color(255, 51, 51));
+        delete.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        delete.setForeground(new java.awt.Color(255, 255, 255));
+        delete.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         delete.setText("<x|");
         delete.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         delete.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -134,6 +173,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        bagi.setBackground(new java.awt.Color(255, 255, 0));
+        bagi.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        bagi.setForeground(new java.awt.Color(255, 255, 255));
+        bagi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bagi.setText("÷");
         bagi.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bagi.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -143,6 +186,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        tujuh.setBackground(new java.awt.Color(255, 51, 255));
+        tujuh.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        tujuh.setForeground(new java.awt.Color(255, 255, 255));
+        tujuh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tujuh.setText("7");
         tujuh.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tujuh.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -152,6 +199,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        delapan.setBackground(new java.awt.Color(255, 51, 255));
+        delapan.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        delapan.setForeground(new java.awt.Color(255, 255, 255));
+        delapan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         delapan.setText("8");
         delapan.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         delapan.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -161,6 +212,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        sembilan.setBackground(new java.awt.Color(255, 51, 255));
+        sembilan.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        sembilan.setForeground(new java.awt.Color(255, 255, 255));
+        sembilan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sembilan.setText("9");
         sembilan.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         sembilan.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -170,6 +225,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        kali.setBackground(new java.awt.Color(255, 255, 0));
+        kali.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        kali.setForeground(new java.awt.Color(255, 255, 255));
+        kali.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         kali.setText("×");
         kali.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         kali.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -179,6 +238,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        empat.setBackground(new java.awt.Color(255, 51, 255));
+        empat.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        empat.setForeground(new java.awt.Color(255, 255, 255));
+        empat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         empat.setText("4");
         empat.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         empat.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -188,6 +251,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        lima.setBackground(new java.awt.Color(255, 51, 255));
+        lima.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        lima.setForeground(new java.awt.Color(255, 255, 255));
+        lima.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lima.setText("5");
         lima.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         lima.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -197,6 +264,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        enam.setBackground(new java.awt.Color(255, 51, 255));
+        enam.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        enam.setForeground(new java.awt.Color(255, 255, 255));
+        enam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         enam.setText("6");
         enam.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         enam.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -206,6 +277,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        kurang.setBackground(new java.awt.Color(255, 255, 0));
+        kurang.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        kurang.setForeground(new java.awt.Color(255, 255, 255));
+        kurang.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         kurang.setText("-");
         kurang.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         kurang.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -215,6 +290,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        satu.setBackground(new java.awt.Color(255, 51, 255));
+        satu.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        satu.setForeground(new java.awt.Color(255, 255, 255));
+        satu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         satu.setText("1");
         satu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         satu.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -224,6 +303,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        dua.setBackground(new java.awt.Color(255, 51, 255));
+        dua.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        dua.setForeground(new java.awt.Color(255, 255, 255));
+        dua.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dua.setText("2");
         dua.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         dua.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -233,6 +316,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        tiga.setBackground(new java.awt.Color(255, 51, 255));
+        tiga.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        tiga.setForeground(new java.awt.Color(255, 255, 255));
+        tiga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tiga.setText("3");
         tiga.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tiga.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -242,6 +329,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        tambah.setBackground(new java.awt.Color(255, 255, 0));
+        tambah.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        tambah.setForeground(new java.awt.Color(255, 255, 255));
+        tambah.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tambah.setText("+");
         tambah.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tambah.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -251,6 +342,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        kuranglebih.setBackground(new java.awt.Color(255, 255, 0));
+        kuranglebih.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        kuranglebih.setForeground(new java.awt.Color(255, 255, 255));
+        kuranglebih.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         kuranglebih.setText("±");
         kuranglebih.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         kuranglebih.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -260,6 +355,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        nol.setBackground(new java.awt.Color(255, 51, 255));
+        nol.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        nol.setForeground(new java.awt.Color(255, 255, 255));
+        nol.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nol.setText("0");
         nol.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         nol.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -269,7 +368,11 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
-        koma.setText(",");
+        koma.setBackground(new java.awt.Color(255, 255, 0));
+        koma.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        koma.setForeground(new java.awt.Color(255, 255, 255));
+        koma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        koma.setText(".");
         koma.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         koma.setPreferredSize(new java.awt.Dimension(90, 50));
         koma.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -278,6 +381,10 @@ public class Tampilan extends javax.swing.JFrame {
             }
         });
 
+        samadengan.setBackground(new java.awt.Color(0, 255, 0));
+        samadengan.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        samadengan.setForeground(new java.awt.Color(255, 255, 255));
+        samadengan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         samadengan.setText("=");
         samadengan.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         samadengan.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -412,7 +519,7 @@ public class Tampilan extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -424,39 +531,39 @@ public class Tampilan extends javax.swing.JFrame {
     }//GEN-LAST:event_nolMouseClicked
 
     private void satuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_satuMouseClicked
-        show.setText(show.getText()+"1");
+        show.setText(show.getText()+"1.0");
     }//GEN-LAST:event_satuMouseClicked
 
     private void duaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_duaMouseClicked
-        show.setText(show.getText()+"2");
+        show.setText(show.getText()+"2.0");
     }//GEN-LAST:event_duaMouseClicked
 
     private void tigaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tigaMouseClicked
-        show.setText(show.getText()+"3");
+        show.setText(show.getText()+"3.0");
     }//GEN-LAST:event_tigaMouseClicked
 
     private void empatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empatMouseClicked
-        show.setText(show.getText()+"4");
+        show.setText(show.getText()+"4.0");
     }//GEN-LAST:event_empatMouseClicked
 
     private void limaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limaMouseClicked
-        show.setText(show.getText()+"5");
+        show.setText(show.getText()+"5.0");
     }//GEN-LAST:event_limaMouseClicked
 
     private void enamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enamMouseClicked
-        show.setText(show.getText()+"6");
+        show.setText(show.getText()+"6.0");
     }//GEN-LAST:event_enamMouseClicked
 
     private void tujuhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tujuhMouseClicked
-        show.setText(show.getText()+"7");
+        show.setText(show.getText()+"7.0");
     }//GEN-LAST:event_tujuhMouseClicked
 
     private void delapanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delapanMouseClicked
-        show.setText(show.getText()+"8");
+        show.setText(show.getText()+"8.0");
     }//GEN-LAST:event_delapanMouseClicked
 
     private void sembilanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sembilanMouseClicked
-        show.setText(show.getText()+"9");
+        show.setText(show.getText()+"9.0");
     }//GEN-LAST:event_sembilanMouseClicked
 
     private void tambahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tambahMouseClicked
@@ -464,6 +571,7 @@ public class Tampilan extends javax.swing.JFrame {
         cal = 1;
         show.setText("");
         bShow.setText(num + "+");
+        operation = "+";
     }//GEN-LAST:event_tambahMouseClicked
 
     private void kurangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kurangMouseClicked
@@ -471,6 +579,7 @@ public class Tampilan extends javax.swing.JFrame {
         cal = 2;
         show.setText("");
         bShow.setText(num + "-");
+        operation = "-";
     }//GEN-LAST:event_kurangMouseClicked
 
     private void kaliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kaliMouseClicked
@@ -478,6 +587,7 @@ public class Tampilan extends javax.swing.JFrame {
         cal = 3;
         show.setText("");
         bShow.setText(num + "×");
+        operation = "*";
     }//GEN-LAST:event_kaliMouseClicked
 
     private void bagiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bagiMouseClicked
@@ -485,15 +595,18 @@ public class Tampilan extends javax.swing.JFrame {
         cal = 4;
         show.setText("");
         bShow.setText(num + "÷");
+        operation = "/";
     }//GEN-LAST:event_bagiMouseClicked
 
     private void samadenganMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_samadenganMouseClicked
+        
         aritmatik();
         bShow.setText("");
+        operation = "=";
     }//GEN-LAST:event_samadenganMouseClicked
 
     private void komaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_komaMouseClicked
-        if(!show.getText().contains(",")){
+        if(!show.getText().contains(".")){
             show.setText(show.getText() + koma.getText());
         }
 //        show.setText(show.getText()+",");
@@ -552,20 +665,52 @@ public class Tampilan extends javax.swing.JFrame {
     private void aritmatik(){
         switch(cal){
             case 1:
-                ans = num + Double.parseDouble(show.getText());
-                show.setText(Double.toString(ans));
+                if(operation.equals("+")){
+                    num2 = Double.parseDouble(show.getText());
+                    ans = num + num2;
+                    show.setText(Double.toString(ans));
+                }
+                
+                if(operation.equals("=")){
+                    ans = ans + num2;
+                    show.setText(Double.toString(ans));
+                }
                 break;
             case 2:
-                ans = num - Double.parseDouble(show.getText());
-                show.setText(Double.toString(ans));
+                if(operation.equals("-")){
+                    num2 = Double.parseDouble(show.getText());
+                    ans = num - num2;
+                    show.setText(Double.toString(ans));
+                }
+                
+                if(operation.equals("=")){
+                    ans = ans - num2;
+                    show.setText(Double.toString(ans));
+                }
                 break;
             case 3:
-                ans = num * Double.parseDouble(show.getText());
-                show.setText(Double.toString(ans));
+                if(operation.equals("*")){
+                    num2 = Double.parseDouble(show.getText());
+                    ans = num * num2;
+                    show.setText(Double.toString(ans));
+                }
+                
+                if(operation.equals("=")){
+                    ans = ans * num2;
+                    show.setText(Double.toString(ans));
+                }
                 break;
             case 4:
-                ans = num / Double.parseDouble(show.getText());
-                show.setText(Double.toString(ans));
+                if(operation.equals("/")){
+                    num2 = Double.parseDouble(show.getText());
+                    ans = num / num2;
+                    show.setText(Double.toString(ans));
+                }
+                
+                if(operation.equals("=")){
+                    ans = ans / num2;
+                    show.setText(Double.toString(ans));
+                }
                 break;
         }
     }
