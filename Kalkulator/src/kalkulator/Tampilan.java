@@ -1,5 +1,7 @@
 package kalkulator;
 
+import javax.swing.JOptionPane;
+
 public class Tampilan extends javax.swing.JFrame {
     private double num, num2 = 0, ans;
     private int cal;
@@ -8,6 +10,7 @@ public class Tampilan extends javax.swing.JFrame {
     public Tampilan() {
         initComponents();
         show.setText("");
+        setTitle("Kalkulator");
     }
 
     @SuppressWarnings("unchecked")
@@ -44,7 +47,6 @@ public class Tampilan extends javax.swing.JFrame {
         samadengan = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        exit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -496,14 +498,10 @@ public class Tampilan extends javax.swing.JFrame {
                     .addComponent(kuranglebih, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(koma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(samadengan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 38, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
-
-        exit.setText("Exit");
-        jMenu1.add(exit);
-
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -614,6 +612,9 @@ public class Tampilan extends javax.swing.JFrame {
 
     private void cMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cMouseClicked
         show.setText("");
+        ans = 0;
+        num = 0;
+        num2 = 0;
     }//GEN-LAST:event_cMouseClicked
 
     private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
@@ -761,7 +762,6 @@ public class Tampilan extends javax.swing.JFrame {
     private javax.swing.JLabel dua;
     private javax.swing.JLabel empat;
     private javax.swing.JLabel enam;
-    private javax.swing.JMenuItem exit;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
